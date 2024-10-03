@@ -1,0 +1,57 @@
+#### Reverse String Using STACK ####
+--------------------------------------------------
+
+
+
+
+#include<iostream>
+#define max_size 20
+using namespace std;
+class Stack{
+    public:
+    char arr[max_size];
+    int top;
+    Stack(){                   //Constructor
+        top= -1;
+    }
+    void push(char ch){
+        if(top>=max_size-1)
+            cout<<"Stack full"<<endl;
+        else{
+            arr[++top]=ch;
+        }
+    }
+    void pop(){
+        if(top<0)
+            cout<<"Stack empty"<<endl;
+        else{
+            cout<<arr[top--];
+        }
+    }
+};
+int main(){
+    Stack stk;
+    string name;
+    cout<<"Enter the string: ";
+    cin>>name;
+    int i=0;
+    while(name[i]!='\0'){
+        stk.push(name[i]);
+        i++;
+    }
+    cout<<"Reversed string: ";
+    while(stk.top>=0){
+        stk.pop();
+    }
+    return 0;
+}
+
+
+
+
+#####OUTPUTS:
+------------------------
+
+
+Enter the string: stressed
+Reversed string: desserts

@@ -1,0 +1,62 @@
+#### Linear Search ####
+       ===========
+
+
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cout << "Enter the no. of elements: ";
+    cin >> n;
+    int arr[n];
+    cout << "Enter the elements: " << endl;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+    int x;
+    cout << "Enter the element you want to search: ";
+    cin >> x;
+
+    // Searching:
+    bool flag=0;
+    for (int i = 0; i < n; i++){
+        if(arr[i] == x){
+            flag = 1;
+            cout<<x<<" found at position: "<<i+1;
+        }
+    }
+    if(flag == 0){
+        cout<<"Element not found!";
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+### Output :
+---------------
+
+
+Enter the no. of elements: 5
+Enter the elements: 
+3 6 1 9 7
+Enter the element you want to search: 9
+9 found at position: 4
+
+----------------------------------------------------------
+
+Enter the no. of elements: 5
+Enter the elements: 
+1 -7 2 4 9
+Enter the element you want to search: 55
+Element not found!

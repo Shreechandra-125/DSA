@@ -1,0 +1,76 @@
+#### Decimal to Binary using STACK ####
+-----------------------------------------------------
+
+
+
+
+#include<iostream>
+#define max_size 20
+using namespace std;
+class D2B{
+    int arr[max_size];
+    int top;
+    public:
+    D2B(){
+        top= -1;
+    }
+    bool isFull(){
+        return top==max_size-1;
+    }
+    bool isEmpty(){
+        return top==-1;
+    }
+    void push(int num){
+        if(isFull())
+            cout<<"Stack full!"<<endl;
+        else
+            arr[++top]=num;
+    }
+    int pop(){
+        if(isEmpty()){
+            cout<<"Stack empty!"<<endl;
+            return 1;
+        }
+        else
+            return arr[top--];
+    }
+};
+void decimal2Binary(int num){
+    D2B db;
+    int rem;
+    while(num>0){
+        rem=num%2;
+        db.push(rem);
+        num=num/2;
+    }
+    cout<<"It's binary equivalent is: ";
+    while(!db.isEmpty()){
+        cout<<db.pop();
+    }
+}
+int main(){
+    int num;
+    cout<<"Enter a decimal no.: ";
+    cin>>num;
+    decimal2Binary(num);
+    return 0;
+}
+
+
+
+
+
+
+
+#### OUTPUT:
+-------------------
+
+
+Enter a decimal no.: 9
+It's binary equivalent is: 1001
+
+
+
+
+
+

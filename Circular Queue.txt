@@ -1,0 +1,85 @@
+#### Circular Queue ####
+----------------------------------
+
+
+
+#include<iostream>
+using namespace std;
+class circularQueue{
+    int* arr;
+    int front, rear;
+    int size;
+    public:
+    circularQueue(int size){
+        arr= new int[size];
+        front= -1;
+        rear= -1;
+    }
+    bool isFull(){
+        return ((rear+1)%size==front);
+    }
+    bool isEmpty(){
+        return (front==-1 && rear==-1);
+    }
+    void enqueue(int num){
+        if(isFull()){
+            cout<<"Stack full"<<endl;
+            return;
+        }
+        else if(isEmpty())
+            front=rear=0;
+        else
+            rear=(rear+1)%size;
+        arr[rear]=num;
+    }
+    void dequeue(){
+        if(isEmpty()){
+            cout<<"Stack empty"<<endl;
+            return;
+        }
+        else if(front==rear){
+            cout<<arr[front]<<" dequeued"<<endl;
+            front=rear=-1;
+        }
+        else{
+            cout<<arr[front]<<" dequeued"<<endl;
+            front=(front+1)%size;
+        }
+    }
+    void display(){
+        if(isEmpty()){
+            cout<<"Stack empty"<<endl;
+            return;
+        }
+        cout<<"Queue Elements:\n";
+        do{
+            cout<<arr[front]<<endl;
+            front=(front+1)%size;
+        }while(front!=(rear+1)%size);
+    }
+};
+int main(){
+    int size, c, num;
+    cout<<"Enter the size of queue: ";
+    cin>>size;
+    circularQueue q(size);
+    do{
+        cout<<"Enqueue=1,  Dequeue=2,  Display=3,   Exit=4\nEnter your choice b/w 1-4: ";
+        cin>>c;
+        switch(c){
+            case 1: cout<<"Enter the element you want to enqueue: ";
+                    cin>>num; 
+                    q.enqueue(num);
+                    break;
+            case 2: q.dequeue();
+                    break;
+            case 3: q.display();
+                    break;
+            case 4: cout<<"Exiting..";
+                    break;
+            default:cout<<"Enter a valid choice";
+                    break;
+        }
+    }while(c!=4);
+    return 0;
+}

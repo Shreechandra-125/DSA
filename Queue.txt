@@ -1,0 +1,133 @@
+#### Queue ####
+------------------------
+
+
+#include<iostream>
+#define max_size 3
+using namespace std;
+class Queue{
+    int arr[max_size];
+    int front, rear;
+    public:
+    Queue(){
+        front= -1;
+        rear= -1;
+    }
+    bool isFull(){
+        return rear==max_size-1;
+    }
+    bool isEmpty(){
+        return ((rear==-1 && front==-1)||(front>rear));
+    }
+    void enqueue(int num){
+        if(isFull()){
+            cout<<"Stack full"<<endl;
+            return;
+        }
+        else if(isEmpty())
+            front=rear=0;
+        else
+            rear++;
+        arr[rear]=num;
+	cout<<"Enqueued"<<endl;
+    }
+    void dequeue(){
+        if(isEmpty()){
+            cout<<"Stack empty"<<endl;
+            return;
+        }
+        else if(front==rear){
+            cout<<arr[front]<<" dequeued"<<endl;
+            front=rear=-1;
+        }
+        else{
+            cout<<arr[front]<<" dequeued"<<endl;
+            front++;
+        }
+    }
+    void display(){
+        if(isEmpty()){
+            cout<<"Stack empty"<<endl;
+            return;
+        }
+        cout<<"Queue Elements:\n";
+        for(int i=front; i<=rear; i++){
+            cout<<arr[i]<<endl;
+        }
+    }
+};
+int main(){
+    int c, num;
+    Queue q;
+    do{
+        cout<<"Enqueue=1,  Dequeue=2,  Display=3,   Exit=4\nEnter your choice b/w 1-4: ";
+        cin>>c;
+        switch(c){
+            case 1: cout<<"Enter the element you want to enqueue: ";
+                    cin>>num; 
+                    q.enqueue(num);
+                    break;
+            case 2: q.dequeue();
+                    break;
+            case 3: q.display();
+                    break;
+            case 4: cout<<"Exiting..";
+                    break;
+            default:cout<<"Enter a valid choice";
+                    break;
+        }
+    }while(c!=4);
+    return 0;
+}
+
+
+
+
+
+####OUTPUT:
+-------------------
+
+Enqueue=1,  Dequeue=2,  Display=3,   Exit=4
+Enter your choice b/w 1-4: 2
+Stack empty
+Enqueue=1,  Dequeue=2,  Display=3,   Exit=4
+Enter your choice b/w 1-4: 3
+Stack empty
+Enqueue=1,  Dequeue=2,  Display=3,   Exit=4
+Enter your choice b/w 1-4: 1
+Enter the element you want to enqueue: 5
+Enqueued
+Enqueue=1,  Dequeue=2,  Display=3,   Exit=4
+Enter your choice b/w 1-4: 1
+Enter the element you want to enqueue: 2
+Enqueued
+Enqueue=1,  Dequeue=2,  Display=3,   Exit=4
+Enter your choice b/w 1-4: 1
+Enter the element you want to enqueue: 4
+Enqueued
+Enqueue=1,  Dequeue=2,  Display=3,   Exit=4
+Enter your choice b/w 1-4: 3
+Queue Elements:
+5
+2
+4
+Enqueue=1,  Dequeue=2,  Display=3,   Exit=4
+Enter your choice b/w 1-4: 2
+5 dequeued
+Enqueue=1,  Dequeue=2,  Display=3,   Exit=4
+Enter your choice b/w 1-4: 1
+Enter the element you want to enqueue: 5
+Enqueued
+Enqueue=1,  Dequeue=2,  Display=3,   Exit=4
+Enter your choice b/w 1-4: 1
+Enter the element you want to enqueue: 5
+Stack full
+Enqueue=1,  Dequeue=2,  Display=3,   Exit=4
+Enter your choice b/w 1-4: 3
+Queue Elements:
+2
+4
+5
+Enqueue=1,  Dequeue=2,  Display=3,   Exit=4
+Enter your choice b/w 1-4: 4
+Exiting..

@@ -1,0 +1,66 @@
+                                  #### TOPICS ####
+                                     ==========
+
+
+1)  Time Complexity(Big Oh, Big Omega, Big Theta)
+
+2)  Array : Traversal, Insertion, Deletion, Reversing, Merging
+
+3)  Linear Search
+4)  Binary Search
+
+5)  Bubble Sort
+6)  Selection Sort
+7)  Insersion Sort
+8)  Quick Sort
+9)  Merge Sort
+10) Heap Sort
+11) Radix Sort
+
+12) LL : Creation, Deletion, Display
+13) LL : Insert at beginning, Insert at end, Insert at any position
+14) LL : Delete at beginning, Delete at end, Delete at any position
+15) LL reverse
+16) LL Sort
+17) Circular LL : Creation, Deletion
+18) Doubly LL : Creation, Deletion
+
+19) Stack : Push, Pop, Display
+20) Stack using LL
+21) Stack using queue
+22) Reverse string using Stack
+23) Decimal to Binary using Stack
+
+24) Queue : Enqueue, Dequeue, Display
+25) Circular Queue
+26) Queue using LL
+27) Queue using stack
+
+28) Binary Tree
+29) AVL Tree
+30) Binary Search Tree(BST) : Insertion, Deletion
+
+31) Breadth First Search(BFS)
+32) Depth First Search(DFS)
+
+33) Infix to Prefix
+34) Infix to Postfix
+
+35) Polynomial Addition, Polynomial Multiplication
+36) Paranthesis Matching
+
+37) Tower of Hanoi
+38) Sparse Matrix
+39) 
+40) 
+
+
+
+
+
+
+
+
+
+
+
